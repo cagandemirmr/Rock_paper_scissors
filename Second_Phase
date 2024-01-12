@@ -1,0 +1,36 @@
+import random
+
+action_list=["rock","paper","scissors"]
+times=int(input("How many times do you want to play? 3 or 5 round:"))
+score=0
+while True:
+    if times>5 or times<3:
+        print("Choose times, 3 or 5 rounds")
+    else:
+    #print(random.choice(action_list))
+        for i in range(0,times+1):
+            player_action=input("Please choose your action,press r for rock,p for paper and s for scissor:")
+            #Tie State
+            if random.choice(action_list)=="rock" and player_action=="r":
+                print(action_list, "Tie! Both players chose the same action.",score)
+            elif random.choice(action_list)=="paper" and player_action=="p":
+                print(action_list, "Tie! Both players chose the same action.",score)
+            elif random.choice(action_list)=="scissor" and player_action=="s":
+                print( action_list,"Tie! Both players chose the same action.",score)
+            #Winning an Losing State:
+            elif random.choice(action_list)=="scissor" and player_action=="p":
+                print( action_list,"You lose.",score) 
+            elif random.choice(action_list)=="scissor" and player_action=="r":
+                score=score+1
+                print(action_list, "You won.","\n Your score:",score) 
+            elif random.choice(action_list)=="rock" and player_action=="p":
+                print( action_list,"You lose.",score) 
+            elif random.choice(action_list)=="rock" and player_action=="s":
+                score=score+1
+                print( action_list,"You won.","\n Your score:",score)
+            elif random.choice(action_list)=="paper" and player_action=="s":
+                print( action_list,"You lose.",score) 
+            elif random.choice(action_list)=="paper" and player_action=="r":
+                score=score+1
+                print( action_list,"You won.","\n Your score:",score)
+
