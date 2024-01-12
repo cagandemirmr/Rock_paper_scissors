@@ -1,0 +1,20 @@
+import random
+
+action_list=["rock","paper","scissors"]
+print(random.choice(action_list))
+
+player_action=input("Please choose your action,press r for rock,p for paper and s for scissor:")
+if random.choice(action_list)=="rock" and player_action=="r":
+  print( "Tie! Both players chose the same action.")
+elif random.choice(action_list)=="paper" and player_action=="p":
+  print( "Tie! Both players chose the same action.")
+elif random.choice(action_list)=="scissor" and player_action=="s":
+  print( "Tie! Both players chose the same action.")
+elif random.choice(action_list)=="scissor" and player_action=="p":
+  print( "You lose.") 
+elif random.choice(action_list)=="scissor" and player_action=="r":
+  print( "You won.") 
+elif random.choice(action_list)=="rock" and player_action=="p":
+  print( "You lose.") 
+elif random.choice(action_list)=="rock" and player_action=="s":
+  print( "You won.")
