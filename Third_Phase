@@ -1,0 +1,21 @@
+
+import random
+
+action_list=["rock","paper","scissors"]
+times=int(input("How many times do you want to play? 3 or 5 round:"))
+score=0
+count=0
+computer_choice=random.choice(action_list)
+for i in range(0,times):
+            player_action=input("Please choose your action,press r for rock,p for paper and s for scissor:")
+            count+=1
+            if count!=times:
+                if (computer_choice=="rock" and player_action=="r") or(computer_choice=="paper" and player_action=="p") or (computer_choice=="scissor" and player_action=="s"):
+                  print(action_list, "Tie! Both players chose the same action.","Your Score:",score)
+                elif (computer_choice=="scissor" and player_action=="p") or (computer_choice=="rock" and player_action=="p") or (computer_choice=="paper" and player_action=="s"):
+                    print( action_list,"You lose.","Your score",score) 
+                else:
+                    score+=1
+                    print(action_list, "You won.","\n Your score:",score) 
+            elif count==times:
+                print("It was a nice game","Your score is",score)
